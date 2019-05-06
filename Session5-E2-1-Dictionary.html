@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="txtInput"/>
+<input type="button" id="btnSearch" onclick="fSearch()" value="Search"/><br>
+<span id="result"></span>
+<script>
+    let dicEng=['house','flower','ruler','window'];
+    let dicVie=['ngôi nhà','hoa','thước kẻ','cửa sổ'];
+
+    function fSearch() {
+        let result='';
+
+        let keySearch=document.getElementById('txtInput').value;
+        for (let i=0;i<dicEng.length;i++) {
+            if (keySearch==dicEng[i]) {
+                result=dicEng[i]+' -> '+dicVie[i];
+                break;
+            } else {
+                result='Key not found';
+            }
+        }
+        document.getElementById('result').innerHTML=result;
+    }
+
+
+</script>
+</body>
+</html>
